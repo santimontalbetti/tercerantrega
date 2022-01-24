@@ -1,0 +1,265 @@
+// VARIABLES
+
+$color1: #1a1a1a;
+$color2: #ffffff;
+$color3: #9E1010;
+$color4: #FAFF00;
+$color5: #001EBA;
+$color6: #FEFEFE;
+$color7: #EBB1FF;
+$color8: #FFA0A0;
+$color9: #B3B1FF;
+$color10: #00b7ff;
+$color11: #ff8800;
+
+// MIXIN
+
+@mixin titulos($fontsize, $fontweight, $lineheight) {
+    font-size:  $fontsize;
+    font-weight: $fontweight;
+    line-height: $lineheight;
+}
+
+// FIN MIXIN
+
+// MAP
+$letterColor:(
+    s: $color3,
+    a: $color4,
+    l: $color5,
+    u: $color6,
+    d: $color7,
+    x: $color8,
+    b: $color9,
+    z: $color10,
+    e: $color11,
+);
+
+@each $color,
+$textColor in $letterColor {
+    .multiColor--#{$color} {
+        color: $textColor;
+    }
+}
+
+// FIN MAP
+
+// EXTEND
+.cabezera {
+    padding-top: 90px;
+    min-height: 300px;
+    background-size: cover;
+    color: $color2
+}
+// FIN EXTEND
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+h1 {
+    @include titulos( 65px, 600px, 80px);
+
+}
+
+h2 {
+    @include titulos(44px, 600px, 80px);
+
+}
+
+h3 {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 80px;
+}
+
+p {
+    font-size: 18px;
+    color: $color2;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+section {
+    padding: 120px 0;
+}
+
+.bg-light-grey {
+    background-color: $color2;
+}
+
+.bg-dark {
+    background-color: $color1;
+}
+
+.topmargin-xs {
+    margin-top: 15px;
+}
+
+.topmargin-sm {
+    margin-top: 30px;
+}
+
+.topmargin-lg {
+    margin-top: 60px;
+}
+
+.btn {
+    font-size: 14px;
+    padding: 15px 26px;
+    min-width: 160px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.btn-light {
+    background-color: $color2;
+    color: $color1;
+    border: 2px solid $color2;
+}
+
+.navbar {
+    background-color: $color2;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    min-height: 100px;
+}
+
+.nav-link {
+    color: $color1;
+}
+
+.nav-link:hover {
+    color: $color1;
+}
+
+.logo-brand {
+    min-width: 160px;
+    max-width: 180px;
+}
+
+.navbar-toggler {
+    font-size: 40px;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+#hero {
+    background-image: url(../img/fondo01bri.jpg);
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 400px;
+    color: $color2;
+}
+
+#hero p {
+    color: $color2;
+}
+
+.content-center {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+#sobremi p {
+    color: $color1;
+}
+
+.img-sobremi {
+    align-items: center;
+}
+
+#motores {
+    background-image: url(../img/fondo03bri.jpg);
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 700px;
+    color: $color2;
+}
+
+.productos-container {
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0;
+    border-radius: 2px;
+}
+
+.productos-container img {
+    transition: all 1.2s;
+}
+
+.productos-container:hover img {
+    transform: scale(1.2);
+}
+
+#contacto p {
+    color: $color1;
+}
+
+#contacto textarea {
+    height: 150px;
+}
+
+#footer {
+    padding: 80px 0;
+    text-align: center;
+    color: $color2;
+}
+
+#footer a {
+    color: $color2;
+}
+
+#footer a:hover {
+    color: $color2;
+}
+
+.footer .list-inline .list-inline-item {
+    padding: 10px 15px;
+}
+
+ion-icon {
+    font-size: 25px ;
+ }
+
+ /* PAGINA SOBREMI */
+
+ #pagina-sobremi {
+    background-image: url(../img/fondosobremi01.jpg);
+    @extend .cabezera;
+}
+
+#pagina-sobremi p {
+    color: $color2;
+}
+
+#pagina-sobremi-content p {
+color: $color1;
+}
+
+/* PAGINA PRODUCTOS */
+
+#pagina-productos {
+    background-image: url(../img/fondo04.jpg);
+    @extend .cabezera;
+}
+
+// PAGINA BLOG
+
+#pagina-blog {
+    background-image: url(../img/fondoblog01.jpg);
+    @extend .cabezera;
+}
+
+#pagina-blog p {
+    color: $color2;
+}
+
+#pagina-blog-content p {
+color: $color1;
+}
